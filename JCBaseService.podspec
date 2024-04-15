@@ -28,18 +28,21 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/zk1947/JCBaseService.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '13.0'
   s.swift_version = '5.0'
   
   #s.source_files = 'JCBaseService/Classes/**/*'
   
-  s.subspec 'Base' do |ss|
-    ss.source_files = 'JCBaseService/Base/*'
-  end
-  
   s.subspec 'Tool' do |ss|
     ss.source_files = 'JCBaseService/Tool/*'
   end
+  
+  s.subspec 'Base' do |ss|
+    ss.source_files = 'JCBaseService/Base/*'
+    ss.dependency 'JCBaseService/Tool'
+  end
+  
+  s.dependency 'SnapKit'
   
   # s.resource_bundles = {
   #   'JCBaseService' => ['JCBaseService/Assets/*.png']

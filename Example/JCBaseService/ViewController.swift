@@ -8,6 +8,7 @@
 
 import UIKit
 import JCBaseService
+import SnapKit
 
 class ViewController: UIViewController {
 
@@ -15,9 +16,17 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        test()
+        view.backgroundColor = .white
+        
+        let vc = currentViewController()
+        JCLog("vc == \(String(describing: vc.self))")
     }
-
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let vc = JCBaseViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

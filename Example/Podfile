@@ -1,10 +1,10 @@
 use_frameworks!
 
-platform :ios, '10.0'
+platform :ios, '13.0'
 
 target 'JCBaseService_Example' do
   pod 'JCBaseService', :path => '../'
-
+  pod 'SnapKit'
   target 'JCBaseService_Tests' do
     inherit! :search_paths
 

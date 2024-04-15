@@ -28,7 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		24F8AC6414968086CE8B71EE /* JCBaseService.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = JCBaseService.podspec; path = ../JCBaseService.podspec; sourceTree = "<group>"; };
+		24F8AC6414968086CE8B71EE /* JCBaseService.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = JCBaseService.podspec; path = ../JCBaseService.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		335C0123DD33B19399EBB26F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		3A8ABD19CB3CA2BD95A1E044 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* JCBaseService_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JCBaseService_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -272,10 +272,12 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-JCBaseService_Example/Pods-JCBaseService_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/JCBaseService/JCBaseService.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JCBaseService.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
