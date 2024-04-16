@@ -5,6 +5,7 @@ platform :ios, '13.0'
 target 'JCBaseService_Example' do
   pod 'JCBaseService', :path => '../'
   pod 'AModule', :path => '../Modules/AModule'
+  pod 'BModule', :path => '../Modules/BModule'
   pod 'SnapKit'
   pod 'Kingfisher'
   target 'JCBaseService_Tests' do

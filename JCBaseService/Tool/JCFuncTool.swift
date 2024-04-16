@@ -70,7 +70,7 @@ public func getVisibleViewController(from vc: UIViewController?) -> UIViewContro
     }
 }
 
-func jc_classExists(_ className: String) -> Bool {
+public func jc_classExists(_ className: String) -> Bool {
     let isClassExist = NSClassFromString(className) != nil
     return isClassExist
 }

@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import JCBaseService
+import AModule
+import BModule
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        JCAModuleRouter.shared.regist()
+        JCBModuleRouter.shared.regist()
         
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
         self.window?.backgroundColor = UIColor.white

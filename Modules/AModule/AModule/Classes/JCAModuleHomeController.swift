@@ -13,6 +13,8 @@ open class JCAModuleHomeController: JCBaseViewController {
     open override func viewDidLoad() {
         super.viewDidLoad()
 
+        setTitle(title: "A模块")
+        
         let button = UIButton.jc_init(image: AModule.image("service"), target: self, action: #selector(buttonAction))
         view.addSubview(button)
         button.snp.makeConstraints { make in
@@ -23,7 +25,7 @@ open class JCAModuleHomeController: JCBaseViewController {
     }
     
     @objc func buttonAction() {
-        
+        URLRouter.default.openRoute("BModule/listPage", parameters: ["id": 333, "name": "nero"])
     }
     
 }

@@ -19,7 +19,7 @@ class ViewController: JCBaseTableViewController {
         
         view.backgroundColor = .white
         
-        self.resourceArr = ["加载图标","测试2"]
+        self.resourceArr = ["路由跳转","路由带回调","路由重定向"]
         self.tableView.separatorStyle = .singleLine
         self.cellIdentifier = "UITableViewCell"
         self.cellModelBlock = { (cell, title) in
@@ -31,9 +31,16 @@ class ViewController: JCBaseTableViewController {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let title: String = resourceArr[indexPath.row] as! String
         switch title {
-        case "加载图标":
-            let vc = JCAModuleHomeController()
-            jc_push(vc)
+        case "路由跳转":
+            URLRouter.default.openRoute("AModule/homePage", parameters: ["id": 111, "name": "nero"])
+        case "路由带回调":
+            let result = URLRouter.default.openRoute("BModule/homePage", parameters: ["id": 222, "name": "nero"]) { body in
+                JCLog("回调参数 == \(String(describing: body))")
+            }
+        case "路由重定向":
+            let routeMap = ["BModule/homePage" : "BModule/listPage"]
+            URLRouter.default.routeRedirector.updateRedirectRoutes(routeMap)
+            URLRouter.default.openRoute("BModule/homePage", parameters: [:])
         default:
             break
         }
