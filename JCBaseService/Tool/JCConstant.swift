@@ -9,6 +9,8 @@ import UIKit
 
 public let jc_window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
 
+public let jc_currentVC = currentViewController()
+
 public let kScreenWidth = UIScreen.main.bounds.width
 
 public let kScreenHeight = UIScreen.main.bounds.height

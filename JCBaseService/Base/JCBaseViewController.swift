@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-public class JCBaseViewController: UIViewController, UIGestureRecognizerDelegate {
+open class JCBaseViewController: UIViewController, UIGestureRecognizerDelegate {
 
     deinit {
         #if DEBUG
@@ -16,7 +16,7 @@ public class JCBaseViewController: UIViewController, UIGestureRecognizerDelegate
         #endif
     }
     
-    public override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         self.modalPresentationStyle = UIModalPresentationStyle.fullScreen
         self.edgesForExtendedLayout = UIRectEdge.all

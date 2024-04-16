@@ -9,8 +9,9 @@
 import UIKit
 import JCBaseService
 import SnapKit
+import AModule
 
-class ViewController: UIViewController {
+class ViewController: JCBaseTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,22 +19,25 @@ class ViewController: UIViewController {
         
         view.backgroundColor = .white
         
-        let vc = currentViewController()
-        JCLog("vc == \(String(describing: vc.self))")
-        
-        
-        
+        self.resourceArr = ["加载图标","测试2"]
+        self.tableView.separatorStyle = .singleLine
+        self.cellIdentifier = "UITableViewCell"
+        self.cellModelBlock = { (cell, title) in
+            let cell: UITableViewCell = cell
+            cell.textLabel?.text = title as? String
+        }
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let vc = JCBaseViewController()
-        jc_push(vc)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let title: String = resourceArr[indexPath.row] as! String
+        switch title {
+        case "加载图标":
+            let vc = JCAModuleHomeController()
+            jc_push(vc)
+        default:
+            break
+        }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 }
 
