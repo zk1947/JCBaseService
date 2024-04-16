@@ -20,11 +20,14 @@ class ViewController: UIViewController {
         
         let vc = currentViewController()
         JCLog("vc == \(String(describing: vc.self))")
+        
+        
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let vc = JCBaseViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+        jc_push(vc)
     }
     
     override func didReceiveMemoryWarning() {

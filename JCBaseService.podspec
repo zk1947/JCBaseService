@@ -33,16 +33,26 @@ TODO: Add long description of the pod here.
   
   #s.source_files = 'JCBaseService/Classes/**/*'
   
+  s.subspec 'Base' do |ss|
+    ss.source_files = 'JCBaseService/Base/*'
+    ss.dependency 'JCBaseService/Tool'
+    ss.dependency 'JCBaseService/Extension'
+  end
+  
   s.subspec 'Tool' do |ss|
     ss.source_files = 'JCBaseService/Tool/*'
   end
   
-  s.subspec 'Base' do |ss|
-    ss.source_files = 'JCBaseService/Base/*'
-    ss.dependency 'JCBaseService/Tool'
+  s.subspec 'Extension' do |ss|
+    ss.source_files = 'JCBaseService/Extension/*'
+  end
+  
+  s.subspec 'CustomUI' do |ss|
+    ss.source_files = 'JCBaseService/CustomUI/*'
   end
   
   s.dependency 'SnapKit'
+  s.dependency 'Kingfisher'
   
   # s.resource_bundles = {
   #   'JCBaseService' => ['JCBaseService/Assets/*.png']

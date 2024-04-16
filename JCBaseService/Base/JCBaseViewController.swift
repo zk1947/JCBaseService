@@ -117,7 +117,7 @@ public class JCBaseViewController: UIViewController, UIGestureRecognizerDelegate
         self.jhRightButton.removeFromSuperview()
         self.jhRightButton.setTitle(title, for: .normal)
         self.jhRightButton.setTitleColor(UIColor.black, for: .normal)
-        self.jhRightButton.titleLabel?.font = JCFont(14)
+        self.jhRightButton.titleLabel?.font = JCFont(16)
         self.jhRightButton.addTarget(self, action: action, for: .touchUpInside)
         self.jhNavView.addSubview(self.jhRightButton)
         self.jhRightButton.snp.makeConstraints { make in
@@ -141,6 +141,6 @@ public class JCBaseViewController: UIViewController, UIGestureRecognizerDelegate
     }
     
     @objc func backAction() {
-        
+        jc_pop()
     }
 }
