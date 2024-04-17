@@ -7,6 +7,7 @@
 
 import UIKit
 import JCBaseService
+import SafariServices
 
 public class JCAModuleRouter: NSObject {
 
@@ -21,5 +22,20 @@ public class JCAModuleRouter: NSObject {
             navigator.push(JCAModuleHomeController(), animated: true)
             return true
         }
+        
+        // h5页面统一处理
+        router.registerRoute(URLRouter.webLink) { routeUrl, navigator, completion in
+            guard let urlString = routeUrl.parameters["url"] as? String, let url = URL(string: urlString) else {
+                return false
+            }
+            navigator.push(SFSafariViewController(url: url))
+            return true
+        }
+        
+        // 单独处理某个链接
+        router.registerRoute("https://juejin.cn/?sort=three_days_hottest") { url, navigator, completion in
+            return true
+        }
+        
     }
 }

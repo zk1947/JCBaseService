@@ -143,8 +143,10 @@ public extension URLRouteParserType {
         let scanner = Scanner(string: urlQuery)
         while !scanner.isAtEnd {
             var pairString: String? = nil
-            pairString = scanner.scanUpToCharacters(from: delimiterSet) // scanUpToCharacters(from: delimiterSet, into: &pairString)
-            _ = scanner.scanCharacters(from: delimiterSet) // scanCharacters(from: delimiterSet, into: nil)
+            pairString = scanner.scanUpToCharacters(from: delimiterSet) 
+            // scanUpToCharacters(from: delimiterSet, into: &pairString)
+            _ = scanner.scanCharacters(from: delimiterSet) 
+            // scanCharacters(from: delimiterSet, into: nil)
             if let kvPair = pairString?.components(separatedBy: "="),
                kvPair.count == 2,
                let key = kvPair[0].removingPercentEncoding,

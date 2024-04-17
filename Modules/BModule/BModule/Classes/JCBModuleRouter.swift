@@ -28,9 +28,25 @@ public class JCBModuleRouter: NSObject {
             case "/listPage":
                 navigator.push(JCBModuleListController(), animated: true)
                 return true
+            case "/detailPage":
+                navigator.push(JCBModuleDetailController(), animated: true)
+                return true
             default:
                 return false
             }
         }
+        
+        // 添加默认拦截Action
+//        let action = URLRouteInterceptor.Action(specifiedRoutes: ["Bmodule/homePage"]) {routeUrl in
+//            // 定义拦截规则
+//            JCLog("000")
+//            return .reject
+//        }
+//        router.routeInterceptor.append(action)
+        
+        // 添加自定义拦截器
+        router.routeInterceptor.append(JCLoginInterceptor())
     }
 }
+
+

@@ -19,7 +19,7 @@ class ViewController: JCBaseTableViewController {
         
         view.backgroundColor = .white
         
-        self.resourceArr = ["路由跳转","路由带回调","路由重定向"]
+        self.resourceArr = ["路由跳转","路由带回调","路由跳Html","路由重定向", "路由拦截器"]
         self.tableView.separatorStyle = .singleLine
         self.cellIdentifier = "UITableViewCell"
         self.cellModelBlock = { (cell, title) in
@@ -34,13 +34,18 @@ class ViewController: JCBaseTableViewController {
         case "路由跳转":
             URLRouter.default.openRoute("AModule/homePage", parameters: ["id": 111, "name": "nero"])
         case "路由带回调":
-            let result = URLRouter.default.openRoute("BModule/homePage", parameters: ["id": 222, "name": "nero"]) { body in
+            _ = URLRouter.default.openRoute("BModule/homePage", parameters: ["id": 222, "name": "nero"]) { body in
                 JCLog("回调参数 == \(String(describing: body))")
             }
+        case "路由跳Html":
+            URLRouter.default.openRoute("http://www.baidu.com", parameters: [:])
         case "路由重定向":
             let routeMap = ["BModule/homePage" : "BModule/listPage"]
             URLRouter.default.routeRedirector.updateRedirectRoutes(routeMap)
             URLRouter.default.openRoute("BModule/homePage", parameters: [:])
+        case "路由拦截器":
+//            URLRouter.default.openRoute("BModule/detailPage", parameters: [:])
+            URLRouter.default.openRoute("BModule/detailPage", parameters: ["token":"123"])
         default:
             break
         }
