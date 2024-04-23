@@ -38,6 +38,10 @@ public func JCBoldFont(_ size: CGFloat) -> UIFont {
     return UIFont.systemFont(ofSize: size*kScale, weight: .bold)
 }
 
+public func jc_currentVC() -> UIViewController {
+    return currentViewController() ?? UIViewController()
+}
+
 public func currentViewController() -> UIViewController? {
     var rootViewController: UIViewController?
     if var window = jc_window {
@@ -73,4 +77,9 @@ public func getVisibleViewController(from vc: UIViewController?) -> UIViewContro
 public func jc_classExist(_ className: String) -> Bool {
     let isClassExist = NSClassFromString(className) != nil
     return isClassExist
+}
+
+public func kPush(viewController: UIViewController) {
+    viewController.hidesBottomBarWhenPushed = true
+    jc_currentVC().navigationController?.pushViewController(viewController, animated: true)
 }

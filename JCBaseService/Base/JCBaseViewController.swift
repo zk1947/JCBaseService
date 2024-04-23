@@ -60,9 +60,9 @@ open class JCBaseViewController: UIViewController, UIGestureRecognizerDelegate {
             make.width.lessThanOrEqualTo(kScreenWidth-150)
         }
         // leftButton
-//        if (UIViewController.current().navigationController?.viewControllers.count) ?? 0 > 1 {
-//            initLeftButtonWithImage(image: Asset.Common.backImg.image, action: #selector(backAction))
-//        }
+        if (jc_currentVC().navigationController?.viewControllers.count) ?? 0 > 1 {
+            initLeftButtonWithImage(image: UIImage(named: "nav_back") ?? UIImage(), action: #selector(backAction))
+        }
     }
 
     public func removeNavView() {

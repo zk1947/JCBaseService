@@ -20,16 +20,13 @@ public class JCBModuleRouter: NSObject {
             JCLog(routeUrl.parameters)
             switch routeUrl.path {
             case "/homePage":
-                navigator.push(JCBModuleHomeController(), animated: true)
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+2, execute: {
-                  completion?("666")
-                })
+                completion?(JCBModuleHomeController())
                 return true
             case "/listPage":
-                navigator.push(JCBModuleListController(), animated: true)
+                kPush(viewController: JCBModuleListController())
                 return true
             case "/detailPage":
-                navigator.push(JCBModuleDetailController(), animated: true)
+                kPush(viewController: JCBModuleDetailController())
                 return true
             default:
                 return false

@@ -29,7 +29,6 @@ open class JCAModuleHomeController: JCBaseViewController {
         
     }
     
-    
     @objc func buttonAction() {
         URLRouter.default.openRoute("BModule/listPage", parameters: ["id": 333, "name": "nero"])
     }

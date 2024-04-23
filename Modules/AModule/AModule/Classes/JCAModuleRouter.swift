@@ -19,7 +19,8 @@ public class JCAModuleRouter: NSObject {
         // 注册单条路由
         router.registerRoute("AModule/homePage") { routeUrl, navigator, completion in
             JCLog(routeUrl.parameters)
-            navigator.push(JCAModuleHomeController(), animated: true)
+            completion?(JCAModuleHomeController())
+//            navigator.push(JCAModuleHomeController(), animated: true)
             return true
         }
         
@@ -28,7 +29,7 @@ public class JCAModuleRouter: NSObject {
             guard let urlString = routeUrl.parameters["url"] as? String, let url = URL(string: urlString) else {
                 return false
             }
-            navigator.push(SFSafariViewController(url: url))
+            kPush(viewController: SFSafariViewController(url: url))
             return true
         }
         
