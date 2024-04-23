@@ -18,18 +18,24 @@ class ViewController: JCBaseTableViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         view.backgroundColor = .white
-        
-        self.resourceArr = ["路由跳转","路由带回调","路由跳Html","路由重定向", "路由拦截器"]
+//        Asset.Common.homeNomal.image
+        self.resourceArr = ["路由跳转", "路由带回调", "路由跳Html", "路由重定向", "路由拦截器"]
         self.tableView.separatorStyle = .singleLine
         self.cellIdentifier = "UITableViewCell"
         self.cellModelBlock = { (cell, title) in
             let cell: UITableViewCell = cell
             cell.textLabel?.text = title as? String
         }
+        
+//        let imgv = UIImageView()
+//        imgv.frame = CGRect(x: 100, y: 100, width: 50, height: 50)
+//        imgv.image = Asset.Common.homeNomal.image
+//        view.addSubview(imgv)
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let title: String = resourceArr[indexPath.row] as! String
+        let title: String = resourceArr[indexPath.row] as? String ?? ""
         switch title {
         case "路由跳转":
             URLRouter.default.openRoute("AModule/homePage", parameters: ["id": 111, "name": "nero"])
@@ -40,16 +46,15 @@ class ViewController: JCBaseTableViewController {
         case "路由跳Html":
             URLRouter.default.openRoute("http://www.baidu.com", parameters: [:])
         case "路由重定向":
-            let routeMap = ["BModule/homePage" : "BModule/listPage"]
+            let routeMap = ["BModule/homePage": "BModule/listPage"]
             URLRouter.default.routeRedirector.updateRedirectRoutes(routeMap)
             URLRouter.default.openRoute("BModule/homePage", parameters: [:])
         case "路由拦截器":
-//            URLRouter.default.openRoute("BModule/detailPage", parameters: [:])
-            URLRouter.default.openRoute("BModule/detailPage", parameters: ["token":"123"])
+            URLRouter.default.openRoute("BModule/detailPage", parameters: [:])
+//            URLRouter.default.openRoute("BModule/detailPage", parameters: ["token":"123"])
         default:
             break
         }
     }
     
 }
-

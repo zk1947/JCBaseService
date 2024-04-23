@@ -15,7 +15,7 @@ public class JCAModuleRouter: NSObject {
     
     public let router = URLRouter.default
     
-    public func regist() {
+    @objc public func regist() {
         // 注册单条路由
         router.registerRoute("AModule/homePage") { routeUrl, navigator, completion in
             JCLog(routeUrl.parameters)
@@ -23,7 +23,7 @@ public class JCAModuleRouter: NSObject {
             return true
         }
         
-        // h5页面统一处理
+        // h5页面统一路由
         router.registerRoute(URLRouter.webLink) { routeUrl, navigator, completion in
             guard let urlString = routeUrl.parameters["url"] as? String, let url = URL(string: urlString) else {
                 return false
@@ -32,7 +32,7 @@ public class JCAModuleRouter: NSObject {
             return true
         }
         
-        // 单独处理某个链接
+        // 单独处理某个h5
         router.registerRoute("https://juejin.cn/?sort=three_days_hottest") { url, navigator, completion in
             return true
         }

@@ -22,7 +22,13 @@ open class JCAModuleHomeController: JCBaseViewController {
             make.top.equalTo(kStatusAndNavBarHeight)
             make.width.height.equalTo(100)
         }
+        
+        let lab = UILabel.jc_init(text: "key".aLocalized, textColor: .black, font: JCFont(14))
+        lab.frame = CGRect(x: 100, y: 250, width: 300, height: 20)
+        view.addSubview(lab)
+        
     }
+    
     
     @objc func buttonAction() {
         URLRouter.default.openRoute("BModule/listPage", parameters: ["id": 333, "name": "nero"])

@@ -21,3 +21,12 @@ open class AModule: NSObject {
         return UIImage()
     }
 }
+
+extension String {
+    
+    /// string localized
+    var aLocalized: String {
+        return NSLocalizedString(self, tableName: "AModuleLizable", bundle: Bundle(for: AModule.self), comment: "")
+    }
+    
+}

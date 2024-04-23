@@ -6,11 +6,9 @@ target 'JCBaseService_Example' do
   pod 'JCBaseService', :path => '../'
   pod 'AModule', :path => '../Modules/AModule'
   pod 'BModule', :path => '../Modules/BModule'
+  #pod 'CModule', :path => '../Modules/CModule'
   pod 'SnapKit'
   pod 'Kingfisher'
-  target 'JCBaseService_Tests' do
-    inherit! :search_paths
-
-    
-  end
+  pod 'SwiftLint'
+  pod 'SwiftGen'
 end

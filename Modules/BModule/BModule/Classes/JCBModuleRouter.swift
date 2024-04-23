@@ -6,15 +6,15 @@
 //
 
 import UIKit
-import JCBaseService
+@_exported import JCBaseService
 
 public class JCBModuleRouter: NSObject {
 
-    static public let shared = JCBModuleRouter()
-    
+//    static public let shared = JCBModuleRouter()
+
     public let router = URLRouter.default
     
-    public func regist() {
+    @objc public func regist() {
         // 注册聚合路由
         router.registerRoute("Bmodule") { routeUrl, navigator, completion in
             JCLog(routeUrl.parameters)

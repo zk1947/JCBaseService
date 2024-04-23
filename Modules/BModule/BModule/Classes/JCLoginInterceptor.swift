@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import JCBaseService
 
 class JCLoginInterceptor: NSObject, URLRouteInterceptionAction {
     

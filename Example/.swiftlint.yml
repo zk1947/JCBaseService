@@ -1,0 +1,33 @@
+# Yaml doc reference:
+#   https://github.com/realm/SwiftLint#disable-rules-in-code
+#   https://github.com/realm/SwiftLint/issues/2180
+
+disabled_rules: # rule identifiers to exclude from running
+  - trailing_whitespace
+  - identifier_name
+  - type_name
+  - shorthand_operator
+  - function_body_length
+  - nesting
+  - type_body_length
+  - cyclomatic_complexity
+  - file_length
+  - unused_closure_parameter
+  - function_parameter_count
+  - large_tuple
+opt_in_rules: # some rules are only opt-in
+included:
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Pods
+  - Vendor
+analyzer_rules: # Rules run by `swiftlint analyze` (experimental)
+  - explicit_self
+
+# configurable rules can be customized from this configuration file
+# binary rules can set their severity level
+force_cast: warning # implicitly
+force_try:
+  severity: warning # explicitly
+# rules that have both warning and error levels, can set just the warning level implicitly
+line_length: 500
+
