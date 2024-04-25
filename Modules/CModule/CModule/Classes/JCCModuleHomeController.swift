@@ -15,10 +15,6 @@ class JCCModuleHomeController: JCBaseViewController {
 
         setTitle(title: "C模块")
         
-        
-        let lab = UILabel.jc_init(text: "key".cLocalized, textColor: .black, font: JCFont(14))
-        lab.frame = CGRect(x: 100, y: 250, width: 300, height: 20)
-        view.addSubview(lab)
     }
     
 

@@ -15,7 +15,7 @@ class JCBModuleHomeController: JCBaseTableViewController {
         // Do any additional setup after loading the view.
         setTitle(title: "B模块")
         
-        self.resourceArr = ["路由跳转","路由带回调","路由跳Html","路由重定向", "未登录路由拦截器，拦截成功", "已登录，不拦截"]
+        self.resourceArr = ["路由跳转","路由带回调","路由跳Html","路由重定向", "拦截器，未登录拦截跳登陆", "拦截器，已登录不拦截"]
         self.tableView.separatorStyle = .singleLine
         self.cellIdentifier = "UITableViewCell"
         self.cellModelBlock = { (cell, title) in
@@ -39,9 +39,9 @@ class JCBModuleHomeController: JCBaseTableViewController {
             let routeMap = ["BModule/blockPage" : "BModule/listPage"]
             URLRouter.default.routeRedirector.updateRedirectRoutes(routeMap)
             URLRouter.default.openRoute("BModule/blockPage", parameters: [:])
-        case "未登录路由拦截器，拦截成功":
+        case "拦截器，未登录拦截跳登陆":
             URLRouter.default.openRoute("BModule/detailPage", parameters: [:])
-        case "已登录，不拦截":
+        case "拦截器，已登录不拦截":
             URLRouter.default.openRoute("BModule/detailPage", parameters: ["token":"123"])
         default:
             break
