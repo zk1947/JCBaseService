@@ -8,6 +8,11 @@
 import Foundation
 
 extension String {
+    
+    public var localized: String {
+        return NSLocalizedString(self, comment: "")
+    }
+    
     public func jc_classFromString() -> AnyClass? {
         guard let bundleName: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as? String else {
             return nil

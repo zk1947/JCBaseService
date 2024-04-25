@@ -16,6 +16,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = scene as? UIWindowScene else { return }
         
+        // 替换Bundle.main为自定义的JHBundle
+        object_setClass(Foundation.Bundle.main, JCBundle.self)
+        JCLanguageManager.shared.language = JCLanguageManager.currentLanguage()!
+        
         JCRouterManager.shared.registAllModuleRoute()
         print("项目集成的组件 == \(JCRouterManager.shared.modules)")
         

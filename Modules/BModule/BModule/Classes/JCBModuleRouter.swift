@@ -17,7 +17,7 @@ public class JCBModuleRouter: NSObject {
     @objc public func regist() {
         // 注册聚合路由
         router.registerRoute("Bmodule") { routeUrl, navigator, completion in
-            JCLog(routeUrl.parameters)
+//            JCLog(routeUrl.parameters)
             switch routeUrl.path {
             case "/homePage":
                 completion?(JCBModuleHomeController())

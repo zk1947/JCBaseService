@@ -101,7 +101,7 @@ open class JCBaseViewController: UIViewController, UIGestureRecognizerDelegate {
         return btn
     }()
     
-    func initLeftButtonWithImage(image: UIImage, action: Selector) {
+    public func initLeftButtonWithImage(image: UIImage, action: Selector) {
         self.jhLeftButton.removeFromSuperview()
         self.jhLeftButton.setImage(image, for: .normal)
         self.jhLeftButton.addTarget(self, action: action, for: .touchUpInside)
@@ -113,7 +113,7 @@ open class JCBaseViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
 
-    func initRightButtonWithTitle(title: String, action: Selector) {
+    public func initRightButtonWithTitle(title: String, action: Selector) {
         self.jhRightButton.removeFromSuperview()
         self.jhRightButton.setTitle(title, for: .normal)
         self.jhRightButton.setTitleColor(UIColor.black, for: .normal)
@@ -128,7 +128,7 @@ open class JCBaseViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
 
-    func initRightButtonWithImage(image: UIImage, action: Selector) {
+    public func initRightButtonWithImage(image: UIImage, action: Selector) {
         self.jhRightButton.removeFromSuperview()
         self.jhRightButton.setImage(image, for: .normal)
         self.jhRightButton.addTarget(self, action: action, for: .touchUpInside)
@@ -140,7 +140,7 @@ open class JCBaseViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
-    @objc func backAction() {
+     @objc public func backAction() {
         jc_pop()
     }
 }

@@ -16,9 +16,10 @@ public class JCAModuleRouter: NSObject {
     public let router = URLRouter.default
     
     @objc public func regist() {
+        
         // 注册单条路由
         router.registerRoute("AModule/homePage") { routeUrl, navigator, completion in
-            JCLog(routeUrl.parameters)
+//            JCLog(routeUrl.parameters)
             completion?(JCAModuleHomeController())
 //            navigator.push(JCAModuleHomeController(), animated: true)
             return true

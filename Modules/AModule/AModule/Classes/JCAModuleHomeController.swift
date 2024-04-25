@@ -13,7 +13,7 @@ open class JCAModuleHomeController: JCBaseViewController {
     open override func viewDidLoad() {
         super.viewDidLoad()
 
-        setTitle(title: "A模块")
+        setTitle(title: "AModule".aLocalized)
         
         let button = UIButton.jc_init(image: AModule.image("service"), target: self, action: #selector(buttonAction))
         view.addSubview(button)
@@ -22,10 +22,6 @@ open class JCAModuleHomeController: JCBaseViewController {
             make.top.equalTo(kStatusAndNavBarHeight)
             make.width.height.equalTo(100)
         }
-        
-        let lab = UILabel.jc_init(text: "key".aLocalized, textColor: .black, font: JCFont(14))
-        lab.frame = CGRect(x: 100, y: 250, width: 300, height: 20)
-        view.addSubview(lab)
         
     }
     

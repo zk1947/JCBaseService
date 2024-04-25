@@ -19,6 +19,12 @@ class JCMainTabBarController: ESTabBarController {
         for moduleName in JCRouterManager.shared.modules {
             self.addTabBarItem(tabName: moduleName)
         }
+        
+        let vc = ViewController()
+        let nav = UINavigationController(rootViewController: vc)
+        vc.tabBarItem = ESTabBarItem.init(self.creatTabbarItem(), title: "D", image: UIImage(named: "home_nomal"), selectedImage: UIImage(named: "home_select"), tag: self.viewControllers?.count ?? 0)
+        self.vcs.append(nav)
+        
         self.viewControllers = vcs
         // 设置tabBar样式
         self.tabBar.backgroundColor = UIColor.white

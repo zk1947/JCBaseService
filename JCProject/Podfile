@@ -6,7 +6,7 @@ target 'JCProject' do
   pod 'JCBaseService', :path => '../'
   pod 'AModule', :path => '../Modules/AModule'
   pod 'BModule', :path => '../Modules/BModule'
-  #pod 'CModule', :path => '../Modules/CModule'
+  pod 'CModule', :path => '../Modules/CModule'
   pod 'SnapKit'
   pod 'Kingfisher'
   pod "ESTabBarController-swift"
