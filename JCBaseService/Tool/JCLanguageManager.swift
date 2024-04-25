@@ -25,14 +25,14 @@ public class JCLanguageManager: NSObject {
     
     private override init() {
         // 第一次初始语言, 获取手机系统语言
-        language = Language(rawValue: NSLocale.preferredLanguages.first ?? "en") ?? .English
+        language = Language(rawValue: NSLocale.preferredLanguages.first ?? "zh-Hans") ?? .Chinese
         super.init()
     }
 
     public func config() {
         // 替换Bundle.main为自定义的JHBundle
         object_setClass(Foundation.Bundle.main, JCBundle.self)
-        JCLanguageManager.shared.language = JCLanguageManager.currentLanguage()
+        language = JCLanguageManager.currentLanguage()
     }
     
     /// 保存所选的语言

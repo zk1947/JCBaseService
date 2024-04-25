@@ -12,8 +12,9 @@ class JCLoginInterceptor: NSObject, URLRouteInterceptionAction {
     var specifiedRoutes: [JCBaseService.URLRouteName]? { ["Bmodule/detailPage"] }
     
     func interceptRoute(for routeUrl: JCBaseService.RouteURL) -> JCBaseService.URLRouteInterceptionResult {
-        if routeUrl.parameters["token"] == nil {
+        if routeUrl.parameters["token"] == nil {            
             JCLog("==== 未登录 ====")
+            kPush(viewController: JCBModuleLoginController())
             return .reject
         }
         return .next

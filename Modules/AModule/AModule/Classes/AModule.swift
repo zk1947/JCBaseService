@@ -24,7 +24,6 @@ open class AModule: NSObject {
     
 }
 
-
 extension String {
     /// string localized
     var aLocalized: String {

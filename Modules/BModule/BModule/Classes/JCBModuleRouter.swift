@@ -22,6 +22,12 @@ public class JCBModuleRouter: NSObject {
             case "/homePage":
                 completion?(JCBModuleHomeController())
                 return true
+            case "/blockPage":
+                kPush(viewController: JCBModuleBlockController())
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+2, execute: {
+                    completion?(["user":"张三"])
+                })
+                return true
             case "/listPage":
                 kPush(viewController: JCBModuleListController())
                 return true

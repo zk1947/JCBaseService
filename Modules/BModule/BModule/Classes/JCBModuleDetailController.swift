@@ -12,6 +12,7 @@ class JCBModuleDetailController: JCBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setTitle(title: "详情页")
         view.backgroundColor = .blue
     }
     

@@ -1,18 +1,18 @@
 //
-//  JCBModuleListController.swift
+//  JCBModuleLoginController.swift
 //  BModule
 //
-//  Created by 赵凯 on 2024/4/16.
+//  Created by 赵凯 on 2024/4/25.
 //
 
 import UIKit
 
-class JCBModuleListController: JCBaseViewController {
+class JCBModuleLoginController: JCBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setTitle(title: "从block重定向到List")
-        view.backgroundColor = .cyan
+
+        setTitle(title: "登陆页")
     }
     
 

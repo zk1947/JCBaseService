@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import JCBaseService
+@_exported import JCBaseService
 import SafariServices
 
 public class JCAModuleRouter: NSObject {
@@ -19,9 +19,13 @@ public class JCAModuleRouter: NSObject {
         
         // 注册单条路由
         router.registerRoute("AModule/homePage") { routeUrl, navigator, completion in
-//            JCLog(routeUrl.parameters)
             completion?(JCAModuleHomeController())
-//            navigator.push(JCAModuleHomeController(), animated: true)
+            return true
+        }
+        
+        router.registerRoute("AModule/detailPage") { routeUrl, navigator, completion in
+            JCLog(routeUrl.parameters)
+            navigator.push(JCAModuleDetailController(), animated: true)
             return true
         }
         

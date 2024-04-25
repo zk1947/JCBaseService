@@ -1,18 +1,18 @@
 //
-//  JCBModuleListController.swift
+//  JCBModuleBlockController.swift
 //  BModule
 //
-//  Created by 赵凯 on 2024/4/16.
+//  Created by 赵凯 on 2024/4/25.
 //
 
 import UIKit
 
-class JCBModuleListController: JCBaseViewController {
+class JCBModuleBlockController: JCBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setTitle(title: "从block重定向到List")
-        view.backgroundColor = .cyan
+
+        setTitle(title: "路由回调")
     }
     
 
