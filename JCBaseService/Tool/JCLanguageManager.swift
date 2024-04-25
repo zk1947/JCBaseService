@@ -29,22 +29,28 @@ public class JCLanguageManager: NSObject {
         super.init()
     }
 
+    public func config() {
+        // 替换Bundle.main为自定义的JHBundle
+        object_setClass(Foundation.Bundle.main, JCBundle.self)
+        JCLanguageManager.shared.language = JCLanguageManager.currentLanguage()
+    }
+    
     /// 保存所选的语言
     static public func saveLanguage(chooseLanguage: Language) {
         UserDefaults.standard.set(chooseLanguage.rawValue, forKey: kChooseLanguageKey)
     }
 
-    /// 获取当前保存的语言,如果从未保存过，获取手机系统语言
-    static public func currentLanguage() -> Language? {
+    /// 获取当前保存的语言,如果从未保存过获取手机系统语言,如果应用支持的语言不包含系统语言默认显示中文
+    static public func currentLanguage() -> Language {
        let langString = UserDefaults.standard.string(forKey: kChooseLanguageKey)
         guard let desLangString = langString else {
             var source = NSLocale.preferredLanguages.first
             if source == "zh-Hans-CN" {
                 source = Language.Chinese.rawValue
             }
-            return Language(rawValue: source ?? "en") ?? .English
+            return Language(rawValue: source ?? "zh-Hans") ?? .Chinese
         }
-      return Language(rawValue: desLangString)
+        return Language(rawValue: desLangString) ?? .Chinese
     }
 
     private var bundleByLanguageCode: [String: Foundation.Bundle] = [:]
