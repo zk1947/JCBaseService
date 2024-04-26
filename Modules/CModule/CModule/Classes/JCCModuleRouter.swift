@@ -13,9 +13,14 @@ class JCCModuleRouter: NSObject {
     public let router = URLRouter.default
     
     @objc public func regist() {
-        router.registerRoute("CModule/homePage") { routeUrl, navigator, completion in
+        router.registerRoute("CModule/getPage") { routeUrl, navigator, completion in
 //            JCLog(routeUrl.parameters)
             completion?(JCCModuleHomeController())
+            return true
+        }
+        
+        router.registerRoute("CModule/homePage") { routeUrl, navigator, completion in
+            kPush(viewController: JCCModuleHomeController())
             return true
         }
     }

@@ -36,7 +36,7 @@ class JCMainTabBarController: ESTabBarController {
     }
     
     func addTabBarItem(tabName: String) {
-        _ = URLRouter.default.openRoute(tabName+"/homePage", parameters: [:]) { viewController in
+        _ = URLRouter.default.openRoute(tabName+"/getPage", parameters: [:]) { viewController in
             let vc = viewController as! UIViewController
             let nav = UINavigationController(rootViewController: vc)
             vc.tabBarItem = ESTabBarItem.init(self.creatTabbarItem(), title: tabName, image: UIImage(named: "home_nomal"), selectedImage: UIImage(named: "home_select"), tag: self.viewControllers?.count ?? 0)

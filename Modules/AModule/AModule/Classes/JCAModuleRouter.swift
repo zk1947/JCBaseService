@@ -18,8 +18,13 @@ public class JCAModuleRouter: NSObject {
     @objc public func regist() {
         
         // 注册单条路由
-        router.registerRoute("AModule/homePage") { routeUrl, navigator, completion in
+        router.registerRoute("AModule/getPage") { routeUrl, navigator, completion in
             completion?(JCAModuleHomeController())
+            return true
+        }
+        
+        router.registerRoute("AModule/homePage") { routeUrl, navigator, completion in
+            navigator.push(JCAModuleHomeController(), animated: true)
             return true
         }
         

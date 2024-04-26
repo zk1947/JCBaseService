@@ -19,8 +19,11 @@ public class JCBModuleRouter: NSObject {
         router.registerRoute("Bmodule") { routeUrl, navigator, completion in
 //            JCLog(routeUrl.parameters)
             switch routeUrl.path {
-            case "/homePage":
+            case "/getPage":
                 completion?(JCBModuleHomeController())
+                return true
+            case "/homePage":
+                kPush(viewController: JCBModuleHomeController())
                 return true
             case "/blockPage":
                 kPush(viewController: JCBModuleBlockController())
