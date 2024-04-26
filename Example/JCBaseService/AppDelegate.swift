@@ -17,8 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         JCRouterManager.shared.registAllModuleRoute()
-        let array = JCRouterManager.shared.modules
-        print(array)
+        JCLog("项目集成的组件 == \(JCRouterManager.shared.modules)")
         
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
         self.window?.backgroundColor = UIColor.white
