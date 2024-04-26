@@ -25,13 +25,11 @@ class ViewController: JCBaseViewController {
                                                 preferredStyle: .actionSheet)
         let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         let deleteAction = UIAlertAction(title: "中文", style: .default, handler: {_ in
-            JCLanguageManager.shared.language = .Chinese
-            JCLanguageManager.saveLanguage(chooseLanguage: .Chinese)
+            JCLanguageManager.shared.changeLanguage(language: .Chinese)
             jc_window?.rootViewController = JCMainTabBarController()
         })
         let archiveAction = UIAlertAction(title: "英文", style: .default, handler: {_ in
-            JCLanguageManager.shared.language = .English
-            JCLanguageManager.saveLanguage(chooseLanguage: .English)
+            JCLanguageManager.shared.changeLanguage(language: .English)
             jc_window?.rootViewController = JCMainTabBarController()
         })
         alertController.addAction(cancelAction)

@@ -9,7 +9,6 @@
 import UIKit
 import JCBaseService
 import SnapKit
-import AModule
 
 class ViewController: JCBaseTableViewController {
 

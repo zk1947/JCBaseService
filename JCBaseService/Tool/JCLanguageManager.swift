@@ -22,7 +22,7 @@ public class JCLanguageManager: NSObject {
     static public let shared = JCLanguageManager()
 
     public var language: Language
-    
+        
     private override init() {
         // 第一次初始语言, 获取手机系统语言
         language = Language(rawValue: NSLocale.preferredLanguages.first ?? "zh-Hans") ?? .Chinese
@@ -35,11 +35,6 @@ public class JCLanguageManager: NSObject {
         language = JCLanguageManager.currentLanguage()
     }
     
-    /// 保存所选的语言
-    static public func saveLanguage(chooseLanguage: Language) {
-        UserDefaults.standard.set(chooseLanguage.rawValue, forKey: kChooseLanguageKey)
-    }
-
     /// 获取当前保存的语言,如果从未保存过获取手机系统语言,如果应用支持的语言不包含系统语言默认显示中文
     static public func currentLanguage() -> Language {
        let langString = UserDefaults.standard.string(forKey: kChooseLanguageKey)
@@ -53,6 +48,12 @@ public class JCLanguageManager: NSObject {
         return Language(rawValue: desLangString) ?? .Chinese
     }
 
+    public func changeLanguage(language: Language) {
+        self.language = language
+        // 保存所选的语言
+        UserDefaults.standard.set(language.rawValue, forKey: JCLanguageManager.kChooseLanguageKey)
+    }
+    
     private var bundleByLanguageCode: [String: Foundation.Bundle] = [:]
     var bundle: Foundation.Bundle? {
         /// 存起来, 避免一直创建
