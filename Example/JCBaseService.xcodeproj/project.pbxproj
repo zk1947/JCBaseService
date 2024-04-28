@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5CFC11D72BD75201007145FF /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFC11D52BD75201007145FF /* Strings+Generated.swift */; };
 		5CFC11D82BD75201007145FF /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFC11D62BD75201007145FF /* XCAssets+Generated.swift */; };
-		5CFC11E22BD75EEC007145FF /* CommonText.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5CFC11E02BD75EEC007145FF /* CommonText.strings */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -26,8 +25,6 @@
 		5CFC11D62BD75201007145FF /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
 		5CFC11DE2BD75E6B007145FF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		5CFC11DF2BD75E6B007145FF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		5CFC11E12BD75EEC007145FF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/CommonText.strings; sourceTree = "<group>"; };
-		5CFC11E32BD75EF2007145FF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/CommonText.strings"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* JCBaseService_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JCBaseService_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,7 +96,6 @@
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				5CFC11D42BD7517F007145FF /* SwiftGen */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
-				5CFC11E02BD75EEC007145FF /* CommonText.strings */,
 			);
 			name = "Example for JCBaseService";
 			path = JCBaseService;
@@ -197,7 +193,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CFC11E22BD75EEC007145FF /* CommonText.strings in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
@@ -310,15 +305,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5CFC11E02BD75EEC007145FF /* CommonText.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5CFC11E12BD75EEC007145FF /* en */,
-				5CFC11E32BD75EF2007145FF /* zh-Hans */,
-			);
-			name = CommonText.strings;
-			sourceTree = "<group>";
-		};
 		607FACD91AFB9204008FA782 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

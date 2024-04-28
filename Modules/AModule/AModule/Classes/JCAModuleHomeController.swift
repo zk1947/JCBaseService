@@ -16,17 +16,18 @@ open class JCAModuleHomeController: JCBaseViewController {
         setTitle(title: "AModule".aLocalized)
         
         let button = UIButton.jc_init(image: AModule.image("service"), target: self, action: #selector(buttonAction))
+        button.jc_imgSize = 20
         view.addSubview(button)
         button.snp.makeConstraints { make in
             make.left.equalTo(100)
             make.top.equalTo(kStatusAndNavBarHeight)
-            make.width.height.equalTo(100)
+            make.width.height.equalTo(50)
         }
-        
+
     }
     
     @objc func buttonAction() {
-        URLRouter.default.openRoute("BModule/listPage", parameters: ["id": 333, "name": "nero"])
+//        URLRouter.default.openRoute("BModule/listPage", parameters: ["id": 333, "name": "nero"])
     }
     
 }

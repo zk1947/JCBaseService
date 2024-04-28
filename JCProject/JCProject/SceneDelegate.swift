@@ -16,6 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = scene as? UIWindowScene else { return }
         
+        UIApplication.runOnce
         JCLanguageManager.shared.config()
         JCRouterManager.shared.registAllModuleRoute()
         print("项目集成的组件 == \(JCRouterManager.shared.modules)")

@@ -7,6 +7,8 @@ target 'JCProject' do
   pod 'AModule', :path => '../Modules/AModule'
   pod 'BModule', :path => '../Modules/BModule'
   pod 'CModule', :path => '../Modules/CModule'
+  #pod 'Alamofire'
+  #pod 'Moya'
   pod 'SnapKit'
   pod 'Kingfisher'
   pod "ESTabBarController-swift"
