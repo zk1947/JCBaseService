@@ -8,7 +8,7 @@
 import Foundation
 import JCBaseService
 
-func getBundle() -> Bundle {
+func getABundle() -> Bundle {
     if let bundleUrl = Bundle(for: AModule.self).url(forResource: "AModule", withExtension: "bundle") {
         if let bundle = Bundle(url: bundleUrl) {
             return bundle
@@ -17,11 +17,11 @@ func getBundle() -> Bundle {
     return Bundle.main
 }
 
-let myBundle = getBundle()
+let myABundle = getABundle()
 
 open class AModule: NSObject {
     internal class func image(_ name: String) -> UIImage {
-        if let image = UIImage(named: name, in: myBundle, compatibleWith: nil) {
+        if let image = UIImage(named: name, in: myABundle, compatibleWith: nil) {
             return image
         }
         return UIImage()
@@ -31,6 +31,6 @@ open class AModule: NSObject {
 extension String {
     /// string localized
     var aLocalized: String {
-        return NSLocalizedString(self, bundle: JCLanguageManager.shared.getModuleBundle(moduleBundle: myBundle), comment: "")
+        return NSLocalizedString(self, bundle: JCLanguageManager.shared.getModuleBundle(moduleBundle: myABundle), comment: "")
     }
 }

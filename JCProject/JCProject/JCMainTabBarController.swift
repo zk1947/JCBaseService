@@ -22,7 +22,7 @@ class JCMainTabBarController: ESTabBarController {
         
         let vc = ViewController()
         let nav = UINavigationController(rootViewController: vc)
-        vc.tabBarItem = ESTabBarItem.init(self.creatTabbarItem(), title: "D", image: UIImage(named: "home_nomal"), selectedImage: UIImage(named: "home_select"), tag: self.viewControllers?.count ?? 0)
+        vc.tabBarItem = ESTabBarItem.init(self.creatTabbarItem(), title: "壳工程", image: UIImage(named: "home_nomal"), selectedImage: UIImage(named: "home_select"), tag: self.viewControllers?.count ?? 0)
         self.vcs.append(nav)
         
         self.viewControllers = vcs

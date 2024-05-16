@@ -30,7 +30,7 @@ public class JCAModuleRouter: NSObject {
         
         router.registerRoute("AModule/detailPage") { routeUrl, navigator, completion in
             JCLog(routeUrl.parameters)
-            navigator.push(JCAModuleDetailController(), animated: true)
+            kPush(viewController: JCAModuleDetailController())
             return true
         }
         
